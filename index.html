@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Harsh 🌻</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#fff5cc, #ffe680);
+  text-align: center;
+}
+
+.page {
+  display: none;
+  padding: 40px 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+button {
+  padding: 14px 26px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  margin: 12px;
+  cursor: pointer;
+}
+
+.primary {
+  background: #ffcc00;
+}
+
+.secondary {
+  background: #ffd966;
+}
+
+#noBtn {
+  position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>Hey Harsh 🌻</h1>
+  <p>I know you think I’m not romantic…</p>
+  <p>So I tried. Slowly. In my own way 🐶</p>
+  <button class="primary" onclick="nextPage()">Okay, show me</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h2>This is me trying 🌼</h2>
+  <p>No drama. No pressure.</p>
+  <p>Just honesty, warmth, and a little courage.</p>
+  <button class="secondary" onclick="nextPage()">Still listening</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h2>So here it is 💛</h2>
+  <p>Will you be my Valentine?</p>
+
+  <button class="primary" onclick="yesClicked()">Yes 💛</button>
+  <button class="secondary" id="noBtn" onmouseover="moveNo()">No 🙃</button>
+</div>
+
+<script>
+let currentPage = 1;
+
+function nextPage() {
+  document.getElementById("page" + currentPage).classList.remove("active");
+  currentPage++;
+  document.getElementById("page" + currentPage).classList.add("active");
+}
+
+function yesClicked() {
+  window.location.href =
+    "https://wa.me/916370488641?text=I%20choose%20you.%20Happy%20Valentine%E2%80%99s%20Day%20%F0%9F%92%9B";
+}
+
+function moveNo() {
+  const btn = document.getElementById("noBtn");
+  btn.style.left = Math.random() * 200 - 100 + "px";
+  btn.style.top = Math.random() * 200 - 100 + "px";
+}
+</script>
+
+</body>
+</html>
